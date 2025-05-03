@@ -1,427 +1,152 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Eletricista Curitiba e SJP - Valmir | Atendimento 24h</title>
-  <style>
-    /* Variáveis de cores */
-    :root {
-      --primary-color: #ffd700;
-      --secondary-color: #00bfff;
-      --dark-bg: #111827;
-      --light-text: #f3f4f6;
-      --accent-color: #25D366;
-      --accent-hover: #1ebe5d;
-    }
-    
-    /* Reset e estilos base */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-    
-    /* Cor de fundo e fontes principais */
-    body { 
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: var(--dark-bg);
-      color: var(--light-text);
-      line-height: 1.6;
-    }
-    
-    /* Header com gradiente */
-    header {
-      background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
-      padding: 30px 20px;
-      text-align: center;
-      border-bottom: 3px solid var(--primary-color);
-    }
-    
-    /* Container centralizado */
-    .container { 
-      max-width: 800px; 
-      margin: 0 auto; 
-      padding: 20px;
-    }
-    
-    /* Título principal */
-    h1 { 
-      color: var(--primary-color);
-      font-size: 2.5em;
-      margin-bottom: 10px;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
-    }
-    
-    /* Tagline */
-    .tagline {
-      font-size: 1.2em;
-      margin-bottom: 20px;
-      color: var(--secondary-color);
-    }
-    
-    /* Seções */
-    .section { 
-      margin-bottom: 40px;
-      background-color: rgba(255, 255, 255, 0.05);
-      border-radius: 8px;
-      padding: 20px;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Botões de contato */
-    .contact-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    
-    /* Botões */
-    .button { 
-      display: block; 
-      background-color: var(--accent-color);
-      color: white; 
-      padding: 15px; 
-      text-align: center; 
-      text-decoration: none; 
-      border-radius: 8px; 
-      font-size: 18px; 
-      font-weight: bold;
-      margin: 10px 0; 
-      transition: all 0.3s ease;
-      border: none;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .button:hover { 
-      background-color: var(--accent-hover);
-      transform: translateY(-2px);
-      box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
-    }
-    
-    .button-primary {
-      background-color: var(--primary-color);
-      color: #000;
-    }
-    
-    .button-primary:hover {
-      background-color: #e6c200;
-    }
-    
-    /* Ícones nos botões */
-    .button i {
-      margin-right: 8px;
-    }
-    
-    /* Lista de serviços */
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-      gap: 15px;
-      margin-top: 20px;
-    }
-    
-    .service-item {
-      background-color: rgba(0, 191, 255, 0.1);
-      padding: 15px;
-      border-radius: 6px;
-      border-left: 3px solid var(--secondary-color);
-    }
-    
-    /* Estilo para títulos secundários */
-    h2 {
-      color: var(--secondary-color);
-      margin-bottom: 15px;
-      font-size: 1.8em;
-      position: relative;
-      padding-bottom: 10px;
-    }
-    
-    h2::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 60px;
-      height: 3px;
-      background-color: var(--primary-color);
-    }
-    
-    /* Avaliações de clientes */
-    .testimonials {
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-    
-    .testimonial {
-      background-color: rgba(255, 255, 255, 0.1);
-      padding: 15px;
-      border-radius: 6px;
-      position: relative;
-    }
-    
-    .testimonial::before {
-      content: '"';
-      font-size: 3em;
-      color: rgba(255, 215, 0, 0.2);
-      position: absolute;
-      top: -10px;
-      left: 5px;
-    }
-    
-    .testimonial-author {
-      text-align: right;
-      font-style: italic;
-      margin-top: 10px;
-      color: var(--primary-color);
-    }
-    
-    /* Promoção destacada */
-    .promo {
-      background: linear-gradient(135deg, rgba(255, 215, 0, 0.2) 0%, rgba(0, 191, 255, 0.2) 100%);
-      padding: 20px;
-      border-radius: 8px;
-      text-align: center;
-      border: 1px dashed var(--primary-color);
-    }
-    
-    .promo h3 {
-      color: var(--primary-color);
-      font-size: 1.5em;
-      margin-bottom: 10px;
-    }
-    
-    /* Rodapé */
-    footer { 
-      margin-top: 40px;
-      padding: 20px;
-      text-align: center;
-      font-size: 14px;
-      color: #777;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-    }
-    
-    /* Responsividade */
-    @media (max-width: 600px) {
-      .services-grid {
-        grid-template-columns: 1fr;
-      }
-      
-      h1 {
-        font-size: 2em;
-      }
-      
-      .tagline {
-        font-size: 1em;
-      }
-    }
-    
-    /* Animações suaves */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    
-    .section {
-      animation: fadeIn 0.5s ease-out forwards;
-    }
-    
-    .section:nth-child(2) { animation-delay: 0.1s; }
-    .section:nth-child(3) { animation-delay: 0.2s; }
-    .section:nth-child(4) { animation-delay: 0.3s; }
-    .section:nth-child(5) { animation-delay: 0.4s; }
-    
-    /* Galeria de Fotos */
-    .gallery-section {
-      margin-bottom: 40px;
-    }
-    
-    .gallery-title {
-      text-align: center;
-      margin-bottom: 25px;
-    }
-    
-    .gallery-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
-      gap: 15px;
-      margin-bottom: 15px;
-    }
-    
-    .gallery-item {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      height: 200px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s ease;
-      cursor: pointer;
-    }
-    
-    .gallery-item:hover {
-      transform: scale(1.03);
-    }
-    
-    .gallery-item img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: filter 0.3s ease;
-    }
-    
-    .gallery-item:hover img {
-      filter: brightness(1.1);
-    }
-    
-    .gallery-caption {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      background: linear-gradient(transparent, rgba(0,0,0,0.7));
-      color: white;
-      padding: 10px;
-      font-size: 14px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-    
-    .gallery-item:hover .gallery-caption {
-      opacity: 1;
-    }
-    
-    .view-more {
-      display: block;
-      text-align: center;
-      color: var(--primary-color);
-      text-decoration: none;
-      margin-top: 10px;
-      font-weight: bold;
-      padding: 8px;
-      background-color: rgba(255,215,0,0.1);
-      border-radius: 4px;
-      transition: all 0.3s ease;
-    }
-    
-    .view-more:hover {
-      background-color: rgba(255,215,0,0.2);
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="Site profissional de serviços elétricos">
+  <meta name="author" content="Valmir">
+  <title>Valmir Eletricista</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 </head>
+
 <body>
-  <header>
+  <!-- Navbar -->
+  <nav class="navbar navbar-dark bg-dark">
     <div class="container">
-      <h1>⚡ Valmir - Eletricista 24h</h1>
-      <p class="tagline">Serviços elétricos de qualidade, confiança e preço justo em Curitiba e São José dos Pinhais</p>
+      <a class="navbar-brand" href="#">Valmir Eletricista</a>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <header class="bg-light py-5">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-8">
+          <h1 class="display-4">Serviços Elétricos de Qualidade</h1>
+          <p class="lead">Instalações, manutenções e automações para sua casa ou empresa.</p>
+          <a class="btn btn-success btn-lg my-3" href="https://wa.me/5541988219664">
+            <i class="fab fa-whatsapp fa-beat"></i> Fale Conosco no WhatsApp
+          </a>
+          <a class="btn btn-primary btn-lg" href="tel:+5541988219664">
+            <i class="fas fa-phone"></i> (41) 98821-9664
+          </a>
+        </div>
+      </div>
     </div>
   </header>
-  
-  <div class="container">
-    <div class="section contact-buttons">
-      <a class="button button-primary" href="https://api.whatsapp.com/send?phone=5541988219664&text=Olá%2C%20preciso%20de%20um%20serviço%20elétrico">📲 Fale agora no WhatsApp</a>
-      <a class="button" href="tel:+5541988219664">📞 Ligue: (41) 98821-9664</a>
-    </div>
-    
-    <div class="section gallery-section">
-      <h2 class="gallery-title">📸 Nossos Trabalhos</h2>
-      <div class="gallery-container">
-        <div class="gallery-item">
-          <img src="./images/quadro-eletrico.jpg" alt="Instalação de quadro elétrico" />
-          <div class="gallery-caption">Instalação de quadro elétrico completo - Água Verde</div>
+
+  <!-- Galeria de Fotos -->
+  <section class="py-4">
+    <div class="container">
+      <h2 class="text-center mb-4">Trabalhos Recentes</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <img src="https://lh3.googleusercontent.com/p/AF1QipOZPZlma3VFJQOeNaGPI1a2pNGA3xI6PCR6yERZ=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Instalação em quadro de distribuição">
         </div>
-        <div class="gallery-item">
-          <img src="./images/fiacao.jpg" alt="Troca de fiação residencial" />
-          <div class="gallery-caption">Troca de fiação residencial - Boqueirão</div>
+        <div class="col-md-4 mb-4">
+          <img src="https://lh3.googleusercontent.com/p/AF1QipMsBlkUiJifsajPKWvMm-kopTVolYEDWEAfARfA=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Manutenção de sistema elétrico">
         </div>
-        <div class="gallery-item">
-          <img src="./images/iluminacao.jpg" alt="Instalação de iluminação" />
-          <div class="gallery-caption">Instalação de iluminação em escritório - Centro</div>
+        <div class="col-md-4 mb-4">
+          <img src="https://lh3.googleusercontent.com/p/AF1QipONtZNhuVKRkhSW7u3TUTNKblIyQeQ2Ki6FAGxx=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Instalação de tomadas e interruptores">
         </div>
-        <div class="gallery-item">
-          <img src="./images/atendimento-emergencial.jpg" alt="Reparo emergencial" />
-          <div class="gallery-caption">Atendimento emergencial - São José dos Pinhais</div>
+        <div class="col-md-4 mb-4">
+          <img src="https://lh3.googleusercontent.com/p/AF1QipMwc40cUjtJO6aNPEg8AMqODQm3KdU36nYFJL4E=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Automatização residencial">
         </div>
-      </div>
-      <a href="#" class="view-more">Ver todos os projetos →</a>
-    </div>
-    
-    <div class="section">
-      <h2>🔧 Serviços Profissionais</h2>
-      <div class="services-grid">
-        <div class="service-item">
-          <strong>Instalação de Disjuntores</strong>
-          <p>Quadros de energia completos com garantia.</p>
+        <div class="col-md-4 mb-4">
+          <img src="https://lh3.googleusercontent.com/p/AF1QipO4tjZ6ngSSSOBgsVHwJrEcgPH-zXzVz3lV16Ls=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Painel elétrico industrial">
         </div>
-        <div class="service-item">
-          <strong>Chuveiros Elétricos</strong>
-          <p>Troca de chuveiro e resistência com segurança.</p>
-        </div>
-        <div class="service-item">
-          <strong>Reparos Elétricos</strong>
-          <p>Manutenção de tomadas e fiação com qualidade.</p>
-        </div>
-        <div class="service-item">
-          <strong>Iluminação</strong>
-          <p>Residencial e comercial com eficiência energética.</p>
-        </div>
-        <div class="service-item">
-          <strong>Instalações Completas</strong>
-          <p>Projetos elétricos para novos ambientes.</p>
-        </div>
-        <div class="service-item">
-          <strong>Emergências 24h</strong>
-          <p>Atendimento rápido a qualquer hora!</p>
+        <div class="col-md-4 mb-4">
+          <img src="https://lh3.googleusercontent.com/p/AF1QipO9KiwoDvUtd6CWcLuobGIqTPUBjlwYihvnVaaV=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Trabalho elétrico adicional">
         </div>
       </div>
     </div>
-    
-    <div class="section">
-      <h2>📍 Áreas de Atendimento</h2>
-      <div class="services-grid">
-        <div class="service-item">
-          <strong>Curitiba</strong>
-          <p>Todos os bairros sem taxa adicional.</p>
+  </section>
+
+  <!-- Serviços -->
+  <section class="py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Nossos Serviços</h2>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Instalações Elétricas</h5>
+              <p class="card-text">Realizamos instalações completas em residências, comércios e indústrias com segurança e qualidade.</p>
+            </div>
+          </div>
         </div>
-        <div class="service-item">
-          <strong>São José dos Pinhais</strong>
-          <p>Atendimento completo em toda a cidade.</p>
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Manutenção Preventiva</h5>
+              <p class="card-text">Evite problemas com revisões periódicas no seu sistema elétrico. Garantimos segurança e funcionalidade.</p>
+            </div>
+          </div>
         </div>
-        <div class="service-item">
-          <strong>Região Metropolitana</strong>
-          <p>Consulte disponibilidade para sua localidade.</p>
-        </div>
-      </div>
-    </div>
-    
-    <div class="section">
-      <h2>⭐ O que Dizem Nossos Clientes</h2>
-      <div class="testimonials">
-        <div class="testimonial">
-          <p>Serviço rápido e bem feito! O Valmir chegou no horário combinado e resolveu o problema de curto-circuito em pouco tempo. Profissional sério e competente.</p>
-          <div class="testimonial-author">– João, Boqueirão</div>
-        </div>
-        <div class="testimonial">
-          <p>Eletricista de confiança, salvou meu fim de semana quando ficamos sem energia. Atendimento emergencial de verdade, chegou em menos de 30 minutos!</p>
-          <div class="testimonial-author">– Carla, São José dos Pinhais</div>
-        </div>
-        <div class="testimonial">
-          <p>Preço justo e resolveu o problema na hora. Já é o segundo serviço que faço com o Valmir e sempre entrega qualidade. Recomendo para todos.</p>
-          <div class="testimonial-author">– Marcos, Água Verde</div>
+        <div class="col-md-4">
+          <div class="card mb-4">
+            <div class="card-body">
+              <h5 class="card-title">Automação Residencial</h5>
+              <p class="card-text">Controle sua casa com tecnologia. Instalamos sistemas de automação simples ou completos.</p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-    
-    <div class="section promo">
-      <h3>🎁 Promoção do Mês</h3>
-      <p>10% de desconto para novos clientes em maio! Mencione este site ao entrar em contato.</p>
-      <a class="button button-primary" style="margin-top: 15px;" href="https://api.whatsapp.com/send?phone=5541988219664&text=Olá%2C%20vi%20a%20promoção%20no%20site%20e%20preciso%20de%20um%20serviço%20elétrico">Aproveitar Promoção</a>
+  </section>
+
+  <!-- Depoimentos -->
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-4">⭐ O que Dizem Nossos Clientes</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4">
+          <blockquote class="blockquote">
+            <p class="mb-0">Serviço rápido e bem feito! O Valmir chegou no horário combinado e resolveu o problema de curto-circuito em pouco tempo. Profissional sério e competente.</p>
+            <footer class="blockquote-footer mt-2">João, Boqueirão</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4 mb-4">
+          <blockquote class="blockquote">
+            <p class="mb-0">Eletricista de confiança, salvou meu fim de semana quando ficamos sem energia. Atendimento emergencial de verdade, chegou em menos de 30 minutos!</p>
+            <footer class="blockquote-footer mt-2">Carla, São José dos Pinhais</footer>
+          </blockquote>
+        </div>
+        <div class="col-md-4 mb-4">
+          <blockquote class="blockquote">
+            <p class="mb-0">Preço justo e resolveu o problema na hora. Já é o segundo serviço que faço com o Valmir e sempre entrega qualidade. Recomendo para todos.</p>
+            <footer class="blockquote-footer mt-2">Marcos, Água Verde</footer>
+          </blockquote>
+        </div>
+      </div>
     </div>
-    
-    <footer>
-      © 2025 Valmir Eletricista - Serviços Elétricos Profissionais em Curitiba e São José dos Pinhais<br>
-      <small>CNPJ: 12.345.678/0001-90 - Credenciado CREA-PR</small>
-    </footer>
-  </div>
+  </section>
+
+  <!-- Contato -->
+  <section class="bg-secondary text-white py-5">
+    <div class="container">
+      <h2 class="text-center mb-4">Entre em Contato</h2>
+      <div class="text-center">
+        <p>📞 WhatsApp: <a class="text-white font-weight-bold" href="https://wa.me/5541988219664">(41) 4198821-9664</a></p>
+        <p>📍 São José dos Pinhais, PR</p>
+        <div class="embed-responsive embed-responsive-16by9 mt-4">
+          <iframe class="embed-responsive-item" src="https://www.google.com/maps?q=São+José+dos+Pinhais,+PR&output=embed" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>© 2025 Valmir Eletricista. Todos os direitos reservados.</small>
+    </div>
+  </footer>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>
