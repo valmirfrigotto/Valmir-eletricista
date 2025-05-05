@@ -2,152 +2,230 @@
 <html lang="pt-br">
 
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="Site profissional de serviços elétricos">
-  <meta name="author" content="Valmir">
-  <title>Valmir Eletricista</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="Site profissional de serviços elétricos">
+    <meta name="author" content="Valmir">
+    <title>Valmir Eletricista</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        .map-container {
+            position: relative;
+            width: 100%;
+            height: 400px;
+        }
+
+        .map-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+
+        body {
+            background-color: #222;
+            color: #eee;
+        }
+
+        .navbar {
+            background-color: #343a40 !important;
+        }
+
+        .bg-light {
+            background-color: #333 !important;
+        }
+
+        .text-black {
+            color: #fff !important;
+        }
+
+        .card {
+            background-color: #444;
+            color: #eee;
+            border: 1px solid #666;
+        }
+
+        .card-body {
+            color: #eee;
+        }
+
+        .bg-secondary {
+            background-color: #555 !important;
+        }
+
+        .text-white-50 {
+            color: #ccc !important;
+        }
+
+        blockquote {
+            border-left: 0.25rem solid #6c757d;
+            padding: 0.5rem 1rem;
+            margin: 1.5rem 0;
+        }
+
+        .blockquote-footer {
+            color: #6c757d;
+            display: block;
+            font-size: 80%;
+            line-height: 1.25rem;
+        }
+
+        a.text-white {
+            color: #fff !important;
+        }
+    </style>
 </head>
 
 <body>
-  <!-- Navbar -->
-  <nav class="navbar navbar-dark bg-dark">
-    <div class="container">
-      <a class="navbar-brand" href="#">Valmir Eletricista</a>
-    </div>
-  </nav>
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">Valmir Eletricista</a>
+        </div>
+    </nav>
 
-  <!-- Header -->
-  <header class="bg-light py-5">
-    <div class="container">
-      <div class="row justify-content-center text-center">
-        <div class="col-lg-8">
-          <h1 class="display-4 text-black font-weight-bold mb-4">Valmir Eletricista 24h</h1>
-          <h1 class="display-4">Serviços Elétricos de Qualidade</h1>
-          <p class="lead">Instalações, manutenções e automações para sua casa ou empresa.</p>
-          <a class="btn btn-success btn-lg my-3" href="https://wa.me/5541988219664?text=Olá,%20estou%20vindo%20pelo%20site%20e%20gostaria%20de%20um%20serviço%20elétrico">
-            <i class="fab fa-whatsapp fa-beat"></i> WhatsApp
-          </a>
-          <a class="btn btn-primary btn-lg" href="tel:+5541988219664">
-            <i class="fas fa-phone"></i> (41) 98821-9664
-          </a>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <!-- Galeria de Fotos -->
-  <section class="py-4">
-    <div class="container">
-      <h2 class="text-center mb-4">Trabalhos Recentes</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <img src="https://lh3.googleusercontent.com/p/AF1QipOZPZlma3VFJQOeNaGPI1a2pNGA3xI6PCR6yERZ=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Instalação em quadro de distribuição">
-        </div>
-        <div class="col-md-4 mb-4">
-          <img src="https://lh3.googleusercontent.com/p/AF1QipMsBlkUiJifsajPKWvMm-kopTVolYEDWEAfARfA=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Manutenção de sistema elétrico">
-        </div>
-        <div class="col-md-4 mb-4">
-          <img src="https://lh3.googleusercontent.com/p/AF1QipONtZNhuVKRkhSW7u3TUTNKblIyQeQ2Ki6FAGxx=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Instalação de tomadas e interruptores">
-        </div>
-        <div class="col-md-4 mb-4">
-          <img src="https://lh3.googleusercontent.com/p/AF1QipMwc40cUjtJO6aNPEg8AMqODQm3KdU36nYFJL4E=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Automatização residencial">
-        </div>
-        <div class="col-md-4 mb-4">
-          <img src="https://lh3.googleusercontent.com/p/AF1QipO4tjZ6ngSSSOBgsVHwJrEcgPH-zXzVz3lV16Ls=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Painel elétrico industrial">
-        </div>
-        <div class="col-md-4 mb-4">
-          <img src="https://lh3.googleusercontent.com/p/AF1QipO9KiwoDvUtd6CWcLuobGIqTPUBjlwYihvnVaaV=s680-w680-h510-rw" class="img-fluid rounded shadow" alt="Trabalho elétrico adicional">
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Serviços -->
-  <section class="py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Nossos Serviços</h2>
-      <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">Instalações Elétricas</h5>
-              <p class="card-text">Realizamos instalações completas em residências, comércios e indústrias com segurança e qualidade.</p>
+    <header class="bg-light py-5">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 text-black font-weight-bold mb-4">Valmir Eletricista 24h</h1>
+                    <h1 class="display-4">Serviços Elétricos de Qualidade</h1>
+                    <p class="lead">Instalações, manutenções e automações para sua casa ou empresa.</p>
+                    <a class="btn btn-success btn-lg my-3"
+                        href="https://wa.me/5541988219664?text=Olá,%20estou%20vindo%20pelo%20site%20e%20gostaria%20de%20um%20serviço%20elétrico">
+                        <i class="fab fa-whatsapp fa-beat"></i> WhatsApp
+                    </a>
+                    <a class="btn btn-primary btn-lg" href="tel:+5541988219664">
+                        <i class="fas fa-phone"></i> (41) 98821-9664
+                    </a>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">Manutenção Preventiva</h5>
-              <p class="card-text">Evite problemas com revisões periódicas no seu sistema elétrico. Garantimos segurança e funcionalidade.</p>
+    </header>
+
+    <section class="py-4">
+        <div class="container">
+            <h2 class="text-center mb-4">Trabalhos Recentes</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipOZPZlma3VFJQOeNaGPI1a2pNGA3xI6PCR6yERZ=s680-w680-h510-rw" class="img-fluid rounded shadow"
+                        alt="Instalação em quadro de distribuição">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipMsBlkUiJifsajPKWvMm-kopTVolYEDWEAfARfA=s680-w680-h510-rw" class="img-fluid rounded shadow"
+                        alt="Manutenção de sistema elétrico">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipONtZNhuVKRkhSW7u3TUTNKblIyQeQ2Ki6FAGxx=s680-w680-h510-rw" class="img-fluid rounded shadow"
+                        alt="Instalação de tomadas e interruptores">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipMwc40cUjtJO6aNPEg8AMqODQm3KdU36nYFJL4E=s680-w680-h510-rw" class="img-fluid rounded shadow"
+                        alt="Automatização residencial">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipO4tjZ6ngSSSOBgsVHwJrEcgPH-zXzVz3lV16Ls=s680-w680-h510-rw" class="img-fluid rounded shadow"
+                        alt="Painel elétrico industrial">
+                </div>
+                <div class="col-md-4 mb-4">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipO9KiwoDvUtd6CWcLuobGIqTPUBjlwYihvnVaaV=s680-w680-h510-rw" class="img-fluid rounded shadow"
+                        alt="Trabalho elétrico adicional">
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-md-4">
-          <div class="card mb-4">
-            <div class="card-body">
-              <h5 class="card-title">Automação Residencial</h5>
-              <p class="card-text">Controle sua casa com tecnologia. Instalamos sistemas de automação simples ou completos.</p>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Nossos Serviços</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Instalações Elétricas</h5>
+                            <p class="card-text">Realizamos instalações completas em residências, comércios e indústrias com
+                                segurança e qualidade.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Manutenção Preventiva</h5>
+                            <p class="card-text">Evite problemas com revisões periódicas no seu sistema elétrico. Garantimos
+                                segurança e funcionalidade.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h5 class="card-title">Automação Residencial</h5>
+                            <p class="card-text">Controle sua casa com tecnologia. Instalamos sistemas de automação simples ou
+                                completos.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Depoimentos -->
-  <section class="py-5 bg-light">
-    <div class="container">
-      <h2 class="text-center mb-4">⭐ O que Dizem Nossos Clientes</h2>
-      <div class="row">
-        <div class="col-md-4 mb-4">
-          <blockquote class="blockquote">
-            <p class="mb-0">Serviço rápido e bem feito! O Valmir chegou no horário combinado e resolveu o problema de curto-circuito em pouco tempo. Profissional sério e competente.</p>
-            <footer class="blockquote-footer mt-2">João, Boqueirão</footer>
-          </blockquote>
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="text-center mb-4">⭐ O que Dizem Nossos Clientes</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">Serviço rápido e bem feito! O Valmir chegou no horário combinado e resolveu o problema
+                            de curto-circuito em pouco tempo. Profissional sério e competente.</p>
+                        <footer class="blockquote-footer mt-2">João, Boqueirão</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">Eletricista de confiança, salvou meu fim de semana quando ficamos sem energia.
+                            Atendimento emergencial de verdade, chegou em menos de 30 minutos!</p>
+                        <footer class="blockquote-footer mt-2">Carla, São José dos Pinhais</footer>
+                    </blockquote>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <blockquote class="blockquote">
+                        <p class="mb-0">Preço justo e resolveu o problema na hora. Já é o segundo serviço que faço com o Valmir
+                            e sempre entrega qualidade. Recomendo para todos.</p>
+                        <footer class="blockquote-footer mt-2">Marcos, Água Verde</footer>
+                    </blockquote>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4 mb-4">
-          <blockquote class="blockquote">
-            <p class="mb-0">Eletricista de confiança, salvou meu fim de semana quando ficamos sem energia. Atendimento emergencial de verdade, chegou em menos de 30 minutos!</p>
-            <footer class="blockquote-footer mt-2">Carla, São José dos Pinhais</footer>
-          </blockquote>
-        </div>
-        <div class="col-md-4 mb-4">
-          <blockquote class="blockquote">
-            <p class="mb-0">Preço justo e resolveu o problema na hora. Já é o segundo serviço que faço com o Valmir e sempre entrega qualidade. Recomendo para todos.</p>
-            <footer class="blockquote-footer mt-2">Marcos, Água Verde</footer>
-          </blockquote>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Contato -->
-  <section class="bg-secondary text-white py-5">
-    <div class="container">
-      <h2 class="text-center mb-4">Entre em Contato</h2>
-      <div class="text-center">
-        <p>📞 WhatsApp: <a class="text-white font-weight-bold" href="https://wa.me/5541988219664?text=Olá,%20estou%20vindo%20pelo%20site%20e%20gostaria%20de%20um%20serviço%20elétrico">(41) 4198821-9664</a></p>
-        <p>📍 São José dos Pinhais, PR</p>
-        <div class="embed-responsive embed-responsive-16by9 mt-4">
-          <iframe class="embed-responsive-item" src="https://www.google.com/maps?q=São+José+dos+Pinhais,+PR&output=embed" allowfullscreen></iframe>
+    <section class="bg-secondary text-white py-5">
+        <div class="container">
+            <h2 class="text-center mb-4">Entre em Contato</h2>
+            <div class="text-center">
+                <p> WhatsApp: <a class="text-white font-weight-bold"
+                        href="https://wa.me/5541988219664?text=Olá,%20estou%20vindo%20pelo%20site%20e%20gostaria%20de%20um%20serviço%20elétrico">(41)
+                        4198821-9664</a></p>
+                <p> Curitiba e Região Metropolitana</p>
+                <div class="map-container mt-4">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m1!1s0x94dce44483819285%3A0x9a8515815c11505d!2sCuritiba%2C%20PR!5e0!3m2!1spt-BR!2sus!4v1708540439971!5m2!1spt-BR!2sus"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Footer -->
-  <footer class="py-4 bg-dark text-white-50">
-    <div class="container text-center">
-      <small>© 2025 Valmir Eletricista. Todos os direitos reservados.</small>
-    </div>
-  </footer>
+    <footer class="py-4 bg-dark text-white-50">
+        <div class="container text-center">
+            <small>© 2025 Valmir Eletricista. Todos os direitos reservados.</small>
+        </div>
+    </footer>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>
