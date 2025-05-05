@@ -10,71 +10,88 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
     <style>
-        .map-container {
-            position: relative;
-            width: 100%;
-            height: 400px;
-        }
-
-        .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border: 0;
-        }
-
         body {
             background-color: #222;
             color: #eee;
         }
 
         .navbar {
-            background-color: #343a40 !important;
+            background-color: #343a40;
+        }
+
+        .navbar-brand {
+            color: #fff;
         }
 
         .bg-light {
-            background-color: #333 !important;
+            background-color: #2d3748 !important;
         }
 
         .text-black {
             color: #fff !important;
         }
 
+        .btn-success {
+            background-color: #28a745;
+            border-color: #28a745;
+        }
+
+        .btn-success:hover {
+            background-color: #218838;
+            border-color: #218838;
+        }
+
+        .btn-primary {
+            background-color: #007bff;
+            border-color: #007bff;
+        }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+
         .card {
-            background-color: #444;
-            color: #eee;
-            border: 1px solid #666;
+            background-color: #343a40;
+            border-color: #4a5568;
         }
 
-        .card-body {
-            color: #eee;
+        .card-title {
+            color: #fff;
         }
 
-        .bg-secondary {
-            background-color: #555 !important;
+        .card-text {
+            color: #ccc;
         }
 
-        .text-white-50 {
-            color: #ccc !important;
-        }
-
-        blockquote {
-            border-left: 0.25rem solid #6c757d;
-            padding: 0.5rem 1rem;
-            margin: 1.5rem 0;
+        .blockquote {
+            background-color: #4a5568;
+            border-left-color: #2d3748;
         }
 
         .blockquote-footer {
-            color: #6c757d;
-            display: block;
-            font-size: 80%;
-            line-height: 1.25rem;
+            color: #ddd;
         }
 
-        a.text-white {
+        .bg-light {
+            background-color: #2d3748 !important;
+        }
+
+        .text-black {
             color: #fff !important;
+        }
+
+        .bg-secondary {
+            background-color: #4a5568 !important;
+        }
+
+        .text-white {
+            color: #fff !important;
+        }
+
+        footer {
+            background-color: #2d3748;
+            color: #fff;
         }
     </style>
 </head>
@@ -205,13 +222,12 @@
         <div class="container">
             <h2 class="text-center mb-4">Entre em Contato</h2>
             <div class="text-center">
-                <p> WhatsApp: <a class="text-white font-weight-bold"
+                <p>📞 WhatsApp: <a class="text-white font-weight-bold"
                         href="https://wa.me/5541988219664?text=Olá,%20estou%20vindo%20pelo%20site%20e%20gostaria%20de%20um%20serviço%20elétrico">(41)
                         4198821-9664</a></p>
-                <p> Curitiba e Região Metropolitana</p>
-                <div class="map-container mt-4">
-                    <iframe
-                        src="https://www.google.com/maps/place/Curitiba,+PR/@-25.4951166,-49.2897982,11z/data=!3m1!4b1!4m6!3m5!1s0x94dce35351cdb3dd:0x6d2f6ba5bacbe809!8m2!3d-25.4268985!4d-49.2651984!16zL20vMDI4bXBy?entry=ttu&g_ep=EgoyMDI1MDQzMC4xIKXMDSoASAFQAw%3D%3D"
+                <p>📍 São José dos Pinhais, PR</p>
+                <div class="embed-responsive embed-responsive-16by9 mt-4">
+                    <iframe class="embed-responsive-item" src="https://www.google.com/maps?q=São+José+dos+Pinhais,+PR&output=embed"
                         allowfullscreen></iframe>
                 </div>
             </div>
