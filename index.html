@@ -8,240 +8,589 @@
     <meta name="author" content="Valmir">
     <title>Valmir Eletricista</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
-        body {
-            background-color: #222;
-            color: #eee;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
 
+        body {
+            background: linear-gradient(135deg, #0f0f1e 0%, #1a1a2e 100%);
+            color: #eee;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* Navbar com glassmorphism */
         .navbar {
-            background-color: #343a40;
+            background: rgba(26, 26, 46, 0.8);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
         }
 
         .navbar-brand {
             color: #fff;
+            font-weight: bold;
+            font-size: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
 
-        .bg-light {
-            background-color: #2d3748 !important;
+        .navbar-brand::before {
+            content: '⚡';
+            font-size: 1.8rem;
+            animation: pulse 2s ease-in-out infinite;
         }
 
-        .text-black {
-            color: #fff !important;
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.2); }
+        }
+
+        /* Header Hero com gradiente animado */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        header::before {
+            content: '';
+            position: absolute;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: moveBackground 20s linear infinite;
+        }
+
+        @keyframes moveBackground {
+            0% { transform: translate(0, 0); }
+            100% { transform: translate(50px, 50px); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 1s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .display-4 {
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
+            animation: slideInLeft 1s ease;
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Botões modernos com efeitos */
+        .btn {
+            border-radius: 30px;
+            padding: 12px 35px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.3);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s, height 0.6s;
+        }
+
+        .btn:hover::before {
+            width: 300px;
+            height: 300px;
         }
 
         .btn-success {
-            background-color: #28a745;
-            border-color: #28a745;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            border: none;
+            box-shadow: 0 5px 15px rgba(17, 153, 142, 0.4);
         }
 
         .btn-success:hover {
-            background-color: #218838;
-            border-color: #218838;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(17, 153, 142, 0.6);
         }
 
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            border: none;
+            box-shadow: 0 5px 15px rgba(79, 172, 254, 0.4);
         }
 
         .btn-primary:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(79, 172, 254, 0.6);
         }
 
-        .card {
-            background-color: #343a40;
-            border-color: #4a5568;
+        /* Seção de trabalhos com grid moderno */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
         }
 
-        .card-title {
-            color: #fff;
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+            cursor: pointer;
         }
 
-        .card-text {
-            color: #ccc;
+        .gallery-item:hover {
+            transform: translateY(-10px) scale(1.02);
         }
 
-        .blockquote {
-            background-color: #4a5568;
-            border-left-color: #2d3748;
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+            display: block;
+        }
+        
+        .gallery-item img[src=""],
+        .gallery-item img:not([src]) {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 250px;
         }
 
-        .blockquote-footer {
-            color: #ddd;
+        .gallery-item:hover img {
+            transform: scale(1.1);
         }
 
-        .bg-light {
-            background-color: #2d3748 !important;
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+            padding: 20px;
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
         }
 
-        .text-black {
-            color: #fff !important;
+        .gallery-item:hover .gallery-overlay {
+            transform: translateY(0);
         }
 
-        .bg-secondary {
-            background-color: #4a5568 !important;
+        /* Cards de serviços modernos */
+        .service-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
         }
 
-        .text-white {
-            color: #fff !important;
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.05), transparent);
+            transform: rotate(45deg);
+            transition: all 0.5s ease;
         }
 
+        .service-card:hover::before {
+            left: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
+            border-color: rgba(102, 126, 234, 0.5);
+        }
+
+        .service-icon {
+            font-size: 3rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+            display: inline-block;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        /* Depoimentos modernos */
+        .testimonial-card {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 100px;
+            color: rgba(102, 126, 234, 0.3);
+            font-family: Georgia, serif;
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .stars {
+            color: #ffd700;
+            font-size: 1.2rem;
+            margin-bottom: 15px;
+        }
+
+        /* Seção de contato moderna */
+        .contact-section {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+            position: relative;
+        }
+
+        .contact-info {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .contact-info i {
+            color: #667eea;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+
+        /* Footer moderno */
         footer {
-            background-color: #2d3748;
-            color: #fff;
+            background: rgba(15, 15, 30, 0.95);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Animações de scroll */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2 {
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+            display: inline-block;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 2px;
+        }
+
+        /* Responsividade aprimorada */
+        @media (max-width: 768px) {
+            .display-4 {
+                font-size: 2rem;
+            }
+            
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
+    <nav class="navbar navbar-dark">
         <div class="container">
             <a class="navbar-brand" href="#">Valmir Eletricista</a>
         </div>
     </nav>
 
-    <header class="bg-light py-5">
+    <header class="py-5">
         <div class="container">
             <div class="row justify-content-center text-center">
-                <div class="col-lg-8">
-                    <h1 class="display-4 text-black font-weight-bold mb-4">Valmir Eletricista 24h</h1>
-                    <h1 class="display-4">Serviços Elétricos de Qualidade</h1>
-                    <p class="lead">Instalações, manutenções e automações para sua casa ou empresa.</p>
-                    <a class="btn btn-success btn-lg my-3"
+                <div class="col-lg-8 hero-content">
+                    <h1 class="display-4 text-white font-weight-bold mb-3">Valmir Eletricista 24h</h1>
+                    <h2 class="h3 text-white mb-4">Serviços Elétricos de Qualidade</h2>
+                    <p class="lead text-white mb-4">Instalações, manutenções e automações para sua casa ou empresa.</p>
+                    <a class="btn btn-success btn-lg my-2 mx-2"
                         href="https://wa.me/5541988219664?text=Olá,%20estou%20vindo%20pelo%20site%20e%20gostaria%20de%20um%20serviço%20elétrico">
-                        <i class="fab fa-whatsapp fa-beat"></i> WhatsApp
+                        <i class="fab fa-whatsapp" style="margin-right: 8px;"></i> WhatsApp
                     </a>
-                    <a class="btn btn-primary btn-lg" href="tel:+5541988219664">
-                        <i class="fas fa-phone"></i> (41) 98821-9664
+                    <a class="btn btn-primary btn-lg my-2 mx-2" href="tel:+5541988219664">
+                        <i class="fas fa-phone" style="margin-right: 8px;"></i> (41) 98821-9664
                     </a>
                 </div>
             </div>
         </div>
     </header>
 
-    <section class="py-4">
+    <section class="fade-in">
         <div class="container">
-            <h2 class="text-center mb-4">Trabalhos Recentes</h2>
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipOZPZlma3VFJQOeNaGPI1a2pNGA3xI6PCR6yERZ=s680-w680-h510-rw" class="img-fluid rounded shadow"
+            <h2 class="text-center mb-5">Trabalhos Recentes</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipOZPZlma3VFJQOeNaGPI1a2pNGA3xI6PCR6yERZ=s680-w680-h510-rw"
                         alt="Instalação em quadro de distribuição">
+                    <div class="gallery-overlay">
+                        <p class="text-white mb-0">Instalação em quadro de distribuição</p>
+                    </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipMsBlkUiJifsajPKWvMm-kopTVolYEDWEAfARfA=s680-w680-h510-rw" class="img-fluid rounded shadow"
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipMsBlkUiJifsajPKWvMm-kopTVolYEDWEAfARfA=s680-w680-h510-rw"
                         alt="Manutenção de sistema elétrico">
+                    <div class="gallery-overlay">
+                        <p class="text-white mb-0">Manutenção de sistema elétrico</p>
+                    </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipONtZNhuVKRkhSW7u3TUTNKblIyQeQ2Ki6FAGxx=s680-w680-h510-rw" class="img-fluid rounded shadow"
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipONtZNhuVKRkhSW7u3TUTNKblIyQeQ2Ki6FAGxx=s680-w680-h510-rw"
                         alt="Instalação de tomadas e interruptores">
+                    <div class="gallery-overlay">
+                        <p class="text-white mb-0">Instalação de tomadas e interruptores</p>
+                    </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipMwc40cUjtJO6aNPEg8AMqODQm3KdU36nYFJL4E=s680-w680-h510-rw" class="img-fluid rounded shadow"
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipMwc40cUjtJO6aNPEg8AMqODQm3KdU36nYFJL4E=s680-w680-h510-rw"
                         alt="Automatização residencial">
+                    <div class="gallery-overlay">
+                        <p class="text-white mb-0">Automatização residencial</p>
+                    </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipO4tjZ6ngSSSOBgsVHwJrEcgPH-zXzVz3lV16Ls=s680-w680-h510-rw" class="img-fluid rounded shadow"
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipO4tjZ6ngSSSOBgsVHwJrEcgPH-zXzVz3lV16Ls=s680-w680-h510-rw"
                         alt="Painel elétrico industrial">
+                    <div class="gallery-overlay">
+                        <p class="text-white mb-0">Painel elétrico industrial</p>
+                    </div>
                 </div>
-                <div class="col-md-4 mb-4">
-                    <img src="https://lh3.googleusercontent.com/p/AF1QipO9KiwoDvUtd6CWcLuobGIqTPUBjlwYihvnVaaV=s680-w680-h510-rw" class="img-fluid rounded shadow"
+                <div class="gallery-item">
+                    <img src="https://lh3.googleusercontent.com/p/AF1QipO9KiwoDvUtd6CWcLuobGIqTPUBjlwYihvnVaaV=s680-w680-h510-rw"
                         alt="Trabalho elétrico adicional">
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-5">
-        <div class="container">
-            <h2 class="text-center mb-4">Nossos Serviços</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Instalações Elétricas</h5>
-                            <p class="card-text">Realizamos instalações completas em residências, comércios e indústrias com
-                                segurança e qualidade.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Manutenção Preventiva</h5>
-                            <p class="card-text">Evite problemas com revisões periódicas no seu sistema elétrico. Garantimos
-                                segurança e funcionalidade.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="card mb-4">
-                        <div class="card-body">
-                            <h5 class="card-title">Automação Residencial</h5>
-                            <p class="card-text">Controle sua casa com tecnologia. Instalamos sistemas de automação simples ou
-                                completos.</p>
-                        </div>
+                    <div class="gallery-overlay">
+                        <p class="text-white mb-0">Trabalho elétrico adicional</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-5 bg-light">
+    <section class="fade-in">
         <div class="container">
-            <h2 class="text-center mb-4">⭐ O que Dizem Nossos Clientes</h2>
+            <h2 class="text-center mb-5">Nossos Serviços</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">Serviço rápido e bem feito! O Valmir chegou no horário combinado e resolveu o problema
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <h5 class="text-white font-weight-bold mb-3">Instalações Elétricas</h5>
+                        <p class="text-light">Realizamos instalações completas em residências, comércios e indústrias com
+                            segurança e qualidade.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tools"></i>
+                        </div>
+                        <h5 class="text-white font-weight-bold mb-3">Manutenção Preventiva</h5>
+                        <p class="text-light">Evite problemas com revisões periódicas no seu sistema elétrico. Garantimos
+                            segurança e funcionalidade.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h5 class="text-white font-weight-bold mb-3">Automação Residencial</h5>
+                        <p class="text-light">Controle sua casa com tecnologia. Instalamos sistemas de automação simples ou
+                            completos.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="fade-in">
+        <div class="container">
+            <h2 class="text-center mb-5">⭐ O que Dizem Nossos Clientes</h2>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="text-light mb-3">Serviço rápido e bem feito! O Valmir chegou no horário combinado e resolveu o problema
                             de curto-circuito em pouco tempo. Profissional sério e competente.</p>
-                        <footer class="blockquote-footer mt-2">João, Boqueirão</footer>
-                    </blockquote>
+                        <p class="text-white font-weight-bold mb-0">João</p>
+                        <small class="text-muted">Boqueirão</small>
+                    </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">Eletricista de confiança, salvou meu fim de semana quando ficamos sem energia.
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="text-light mb-3">Eletricista de confiança, salvou meu fim de semana quando ficamos sem energia.
                             Atendimento emergencial de verdade, chegou em menos de 30 minutos!</p>
-                        <footer class="blockquote-footer mt-2">Carla, São José dos Pinhais</footer>
-                    </blockquote>
+                        <p class="text-white font-weight-bold mb-0">Carla</p>
+                        <small class="text-muted">São José dos Pinhais</small>
+                    </div>
                 </div>
                 <div class="col-md-4 mb-4">
-                    <blockquote class="blockquote">
-                        <p class="mb-0">Preço justo e resolveu o problema na hora. Já é o segundo serviço que faço com o Valmir
+                    <div class="testimonial-card">
+                        <div class="stars">★★★★★</div>
+                        <p class="text-light mb-3">Preço justo e resolveu o problema na hora. Já é o segundo serviço que faço com o Valmir
                             e sempre entrega qualidade. Recomendo para todos.</p>
-                        <footer class="blockquote-footer mt-2">Marcos, Água Verde</footer>
-                    </blockquote>
+                        <p class="text-white font-weight-bold mb-0">Marcos</p>
+                        <small class="text-muted">Água Verde</small>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="bg-secondary text-white py-5">
+    <section class="contact-section fade-in">
         <div class="container">
-            <h2 class="text-center mb-4">Entre em Contato</h2>
-            <div class="text-center">
-                <p>📞 WhatsApp: <a class="text-white font-weight-bold"
-                        href="https://wa.me/5541988219664?text=Olá,%20estou%20vindo%20pelo%20site%20e%20gostaria%20de%20um%20serviço%20elétrico">(41)
-                        4198821-9664</a></p>
-                <p>📍 São José dos Pinhais, PR</p>
-                <div class="embed-responsive embed-responsive-16by9 mt-4">
-                    <iframe class="embed-responsive-item" src="https://www.google.com/maps?q=São+José+dos+Pinhais,+PR&output=embed"
-                        allowfullscreen></iframe>
+            <h2 class="text-center mb-5 text-white">Entre em Contato</h2>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="contact-info text-center mb-4">
+                        <p class="h5 text-white mb-3">
+                            <i class="fab fa-whatsapp"></i>
+                            <a class="text-white" href="https://wa.me/5541988219664?text=Olá,%20estou%20vindo%20pelo%20site%20e%20gostaria%20de%20um%20serviço%20elétrico">(41) 98821-9664</a>
+                        </p>
+                        <p class="h5 text-white">
+                            <i class="fas fa-map-marker-alt"></i>
+                            São José dos Pinhais, PR
+                        </p>
+                    </div>
+                    <div class="embed-responsive embed-responsive-16by9" style="border-radius: 20px; overflow: hidden; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
+                        <iframe class="embed-responsive-item" src="https://www.google.com/maps?q=São+José+dos+Pinhais,+PR&output=embed"
+                            allowfullscreen></iframe>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer class="py-4 bg-dark text-white-50">
+    <footer class="py-4">
         <div class="container text-center">
-            <small>© 2025 Valmir Eletricista. Todos os direitos reservados.</small>
+            <small class="text-white-50">© 2025 Valmir Eletricista. Todos os direitos reservados.</small>
         </div>
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Animação de scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Smooth scroll para links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth' });
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
