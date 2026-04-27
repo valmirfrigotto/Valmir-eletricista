@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://valmirfrigotto.github.io/Valmir-eletricista/sitemap.xml

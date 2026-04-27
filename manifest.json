@@ -1,0 +1,21 @@
+{
+  "name": "Valtek Elétrica",
+  "short_name": "Valtek",
+  "description": "Eletricista 24h em Curitiba e Região",
+  "start_url": "/Valmir-eletricista/",
+  "display": "standalone",
+  "background_color": "#0A0A0F",
+  "theme_color": "#1E88E5",
+  "icons": [
+    {
+      "src": "img/logo_valtek.jpg",
+      "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "img/logo_valtek.jpg",
+      "sizes": "512x512",
+      "type": "image/jpeg"
+    }
+  ]
+}
