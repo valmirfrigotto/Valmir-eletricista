@@ -46,7 +46,7 @@ body { background:var(--dark); color:var(--silver); font-family:'Inter',sans-ser
 @keyframes sparkle { 0%,100%{opacity:0;transform:scale(0) translateY(0)} 50%{opacity:1;transform:scale(1.5) translateY(-30px)} }
 .hero-content { position:relative; z-index:1; max-width:900px; }
 .hero-logo-main { margin-bottom: 30px; animation: fadeInUp 1s ease-out; }
-.hero-logo-main .main-logo { height: 180px; width: auto; filter: drop-shadow(0 0 20px rgba(212,175,55,0.2)); }
+.hero-logo-main .main-logo { height: 306px; width: auto; max-width: 90vw; filter: drop-shadow(0 0 20px rgba(212,175,55,0.2)); }
 .hero h1.hero-title-small { font-size:clamp(1.5rem,3.5vw,2.2rem); font-weight:800; color:var(--white); margin-bottom:12px; line-height:1.2; letter-spacing: -0.5px; }
 .hero h1.hero-title-small span { background: linear-gradient(to bottom, #FFFFFF 0%, #D4AF37 100%); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
 .hero p.hero-desc { font-size:1.1rem; color:var(--silver); margin-bottom:28px; max-width:700px; margin-left:auto; margin-right:auto; line-height: 1.5; }
