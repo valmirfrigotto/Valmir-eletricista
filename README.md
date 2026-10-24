@@ -5,18 +5,20 @@ Site estático para GitHub Pages, com tema grafite e dourado, logo translúcida,
 | Versão | Acesso |
 | --- | --- |
 | Principal | [Abrir site](https://valmirfrigotto.github.io/Valmir-eletricista/) |
-| Anterior preservada | [Abrir versão anterior](https://valmirfrigotto.github.io/Valmir-eletricista/versoes/anterior-2026-10-23/) |
+| Código da versão anterior | [Consultar no GitHub](https://github.com/valmirfrigotto/Valmir-eletricista/tree/site-anterior-2026-10-23) |
 | Instruções para voltar | [VERSOES.md](VERSOES.md) |
 
 ## Organização
 
 - `index.html`, `estilo.css`, `site.js` e `config.js`: versão principal.
 - `assets/`: logo escolhida e imagens usadas pela versão principal.
-- `versoes/anterior-2026-10-23/`: cópia integral dos arquivos da versão anterior.
+- Marcador `site-anterior-2026-10-23`: código completo da versão anterior no histórico Git, disponível para consulta e restauração, sem página publicada.
 - `img/`, `style.css`, `script.js` e `manifest.json`: arquivos originais preservados na raiz, facilitando a restauração.
 - `.nojekyll`: mantém a publicação estática, sem compilação.
 
 O GitHub Pages usa a raiz da branch `main`. Uma atualização nessa branch inicia a publicação. O estado do build deve ser conferido antes de considerar uma alteração publicada.
+
+A cópia em `versoes/anterior-2026-10-23/` foi retirada da branch `main` em 24/10/2026. O endereço antigo deixa de existir após essa publicação. Todos os 24 arquivos originais permanecem no marcador acima.
 
 ## Contato e interações
 
