@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /Valmir-eletricista/versoes/
 
 Sitemap: https://valmirfrigotto.github.io/Valmir-eletricista/sitemap.xml

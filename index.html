@@ -1,527 +1,112 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Valtek Elétrica | Eletricista 24h em Curitiba e Região</title>
-  <meta name="description" content="Valtek Elétrica — Eletricista profissional 24h certificado NR-10. Instalações residenciais, comerciais, manutenção e projetos luminotécnicos com segurança, rapidez e garantia.">
-  <meta name="theme-color" content="#05070D">
-
-  <script>document.documentElement.classList.add('js');</script>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-  <script src="script.js" defer></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111314">
+  <meta name="color-scheme" content="dark">
+  <meta name="description" content="Valtek Elétrica em Curitiba e São José dos Pinhais. Instalações residenciais e comerciais, manutenção, iluminação LED, automação e atendimento emergencial 24h.">
+  <title>Valtek Elétrica — Eletricista em Curitiba e região</title>
+  <link rel="icon" href="assets/logo-valtek-translucida.png" type="image/png">
+  <link rel="stylesheet" href="estilo.css">
+  <script src="config.js" defer></script>
+  <script src="site.js" defer></script>
 </head>
 <body>
-
-  <!-- ===== SVG SPRITE ===== -->
-  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-    <symbol id="i-bolt" viewBox="0 0 24 24"><path d="M13 2 3 14h9l-1 8 10-12h-9l1-8z"/></symbol>
-    <symbol id="i-home" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V20a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1z"/></symbol>
-    <symbol id="i-building" viewBox="0 0 24 24"><path d="M4 21V5a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v16"/><path d="M16 9h2a2 2 0 0 1 2 2v10"/><path d="M3 21h18"/><path d="M8 7h4M8 11h4M8 15h4"/></symbol>
-    <symbol id="i-wrench" viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
-    <symbol id="i-bulb" viewBox="0 0 24 24"><path d="M9 18h6M10 22h4"/><path d="M12 2a7 7 0 0 0-4 12.7c.6.5 1 1.3 1 2.3h6c0-1 .4-1.8 1-2.3A7 7 0 0 0 12 2z"/></symbol>
-    <symbol id="i-chip" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 1v3M15 1v3M9 20v3M15 20v3M20 9h3M20 14h3M1 9h3M1 14h3"/></symbol>
-    <symbol id="i-siren" viewBox="0 0 24 24"><path d="M7 18v-6a5 5 0 0 1 10 0v6"/><path d="M5 21a1 1 0 0 1-1-1v-1a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1a1 1 0 0 1-1 1z"/><path d="M21 12h1M18.5 4.5 18 5M2 12h1M12 2v1M4.93 4.93l.71.71"/></symbol>
-    <symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></symbol>
-    <symbol id="i-check" viewBox="0 0 24 24"><path d="M20 6 9 17l-5-5"/></symbol>
-    <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></symbol>
-    <symbol id="i-expand" viewBox="0 0 24 24"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></symbol>
-    <symbol id="i-close" viewBox="0 0 24 24"><path d="M18 6 6 18M6 6l12 12"/></symbol>
-    <symbol id="i-clock" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></symbol>
-    <symbol id="i-whatsapp" viewBox="0 0 24 24"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></symbol>
-    <symbol id="i-phone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
-    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></symbol>
-    <symbol id="i-instagram" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><path d="M17.5 6.5h.01"/></symbol>
-    <symbol id="i-facebook" viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
-    <symbol id="i-linkedin" viewBox="0 0 24 24"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
-    <symbol id="i-youtube" viewBox="0 0 24 24"><path d="M2.5 17a24 24 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.6 49.6 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24 24 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.6 49.6 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/></symbol>
+  <a class="pular" href="#conteudo">Pular para o conteúdo</a>
+  <svg class="biblioteca-icones" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+    <symbol id="raio" viewBox="0 0 24 24"><path d="m13 2-9 12h7l-1 8 10-13h-7l1-7Z"/></symbol>
+    <symbol id="seta" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6"/></symbol>
+    <symbol id="diagonal" viewBox="0 0 24 24"><path d="M6 18 18 6M6 6h12v12"/></symbol>
+    <symbol id="check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="escudo" viewBox="0 0 24 24"><path d="m12 3 8 3v6c0 5-8 9-8 9s-8-4-8-9V6l8-3Z"/><path d="m8 12 3 3 5-6"/></symbol>
+    <symbol id="tomada" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M8 9v3m8-3v3m-4 3v1"/></symbol>
+    <symbol id="lampada" viewBox="0 0 24 24"><path d="M9 18h6m-5 3h4M8 14a7 7 0 1 1 8 0c-1 1-1 2-1 2H9s0-1-1-2Z"/></symbol>
+    <symbol id="ferramenta" viewBox="0 0 24 24"><path d="M14 6a6 6 0 0 0-7 7L3 17a3 3 0 0 0 4 4l5-5a6 6 0 0 0 7-8l-4 4-3-3 4-4Z"/></symbol>
+    <symbol id="quadro" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 12h18M8 6v3m8-3v3m-8 6v3m8-3v3"/></symbol>
+    <symbol id="casa" viewBox="0 0 24 24"><path d="m3 10 9-7 9 7M5 9v12h14V9m-10 12v-7h6v7"/></symbol>
+    <symbol id="mensagem" viewBox="0 0 24 24"><path d="M21 11a9 9 0 0 1-13 8l-5 2 1-5a9 9 0 1 1 17-5Z"/><path d="M8 10h8m-8 4h5"/></symbol>
+    <symbol id="whatsapp" viewBox="0 0 24 24"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1a5 5 0 0 0 5 5h1a.5.5 0 0 0 0-1h-1a.5.5 0 0 0 0 1"/></symbol>
+    <symbol id="telefone" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
+    <symbol id="automacao" viewBox="0 0 24 24"><rect x="5" y="5" width="14" height="14" rx="2"/><rect x="9" y="9" width="6" height="6" rx="1"/><path d="M9 2v3m6-3v3M9 19v3m6-3v3M2 9h3m-3 6h3m14-6h3m-3 6h3"/></symbol>
+    <symbol id="relogio" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
   </svg>
 
-  <a class="skip-link" href="#main">Pular para o conteúdo</a>
-
-  <!-- ================= HEADER ================= -->
-  <header class="header" id="header">
-    <div class="container header__inner">
-      <a href="#inicio" class="logo" aria-label="Valtek Elétrica — voltar ao início">
-        <img src="img/logo_valtek.png" alt="Valtek Elétrica" style="max-height: 42px; width: auto; display: block; filter: drop-shadow(0 0 10px rgba(251,191,36,0.3));">
-      </a>
-
-      <nav class="nav" id="nav" aria-label="Navegação principal">
-        <ul class="nav__list">
-          <li><a href="#sobre" class="nav__link">Sobre</a></li>
-          <li><a href="#servicos" class="nav__link">Serviços</a></li>
-          <li><a href="#projetos" class="nav__link">Projetos</a></li>
-          <li><a href="#contato" class="nav__link">Contatos</a></li>
-        </ul>
-        <a href="#contato" class="btn btn--primary nav__cta-mobile">
-          Solicitar Orçamento <svg class="icon"><use href="#i-arrow"/></svg>
-        </a>
+  <header class="cabecalho">
+    <div class="container navegacao">
+      <a class="marca marca-valtek" href="#inicio" aria-label="Valtek Elétrica, início"><span class="marca-recorte"><img src="assets/logo-valtek-translucida.png" alt="Valtek Elétrica" width="1655" height="950"></span></a>
+      <button class="menu-botao" type="button" aria-expanded="false" aria-controls="menu" aria-label="Abrir menu"><span></span><span></span></button>
+      <nav id="menu" class="menu" aria-label="Menu principal">
+        <a href="#sobre">A Valtek</a><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a>
+        <a class="botao botao-escuro botao-nav" href="#contato">Solicitar orçamento <svg class="icone"><use href="#diagonal"/></svg></a>
       </nav>
-
-      <div class="header__actions">
-        <a href="#contato" class="btn btn--primary btn--sm header__cta">
-          <svg class="icon icon--fill"><use href="#i-bolt"/></svg> Solicitar Orçamento
-        </a>
-        <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
     </div>
   </header>
 
-  <main id="main">
-
-    <!-- ================= HERO ================= -->
-    <section class="hero" id="inicio">
-      <div class="hero__bg" aria-hidden="true">
-        <div class="hero__grid"></div>
-        <div class="hero__glow hero__glow--1"></div>
-        <div class="hero__glow hero__glow--2"></div>
-        <span class="hero__beam hero__beam--h1"></span>
-        <span class="hero__beam hero__beam--h2"></span>
-        <span class="hero__beam hero__beam--v1"></span>
-      </div>
-
-      <div class="container hero__inner">
-        <div class="hero__content">
-          <span class="badge reveal"><span class="badge__dot"></span>Atendimento emergencial 24h</span>
-
-          <h1 class="hero__title reveal" style="--d:1">
-            Instalações Elétricas
-            <span class="text-gradient">Seguras e Inteligentes</span>
-          </h1>
-
-          <p class="hero__subtitle reveal" style="--d:2">
-            Engenharia elétrica de alto padrão para residências e empresas. Técnicos certificados NR-10,
-            materiais homologados e garantia por escrito — com a rapidez que o seu projeto exige.
-          </p>
-
-          <div class="hero__actions reveal" style="--d:3">
-            <a href="#contato" class="btn btn--primary btn--lg">
-              Solicitar Orçamento <svg class="icon"><use href="#i-arrow"/></svg>
-            </a>
-            <a href="#projetos" class="btn btn--ghost btn--lg">Ver Projetos</a>
-          </div>
-
-          <ul class="hero__stats reveal" style="--d:4">
-            <li><strong data-count="15" data-suffix="+">15+</strong><span>Anos de experiência</span></li>
-            <li><strong data-count="2500" data-suffix="+">2.500+</strong><span>Projetos entregues</span></li>
-            <li><strong data-count="98" data-suffix="%">98%</strong><span>Clientes satisfeitos</span></li>
-            <li><strong data-count="24" data-suffix="h">24h</strong><span>Suporte emergencial</span></li>
-          </ul>
+  <main id="conteudo">
+<section class="hero" id="inicio" aria-labelledby="titulo-principal">
+      <div class="hero-fundo" aria-hidden="true"></div>
+      <div class="container hero-grade">
+        <div class="hero-texto">
+          <p class="disponibilidade entrada"><span></span> Atendimento emergencial 24h</p>
+          <h1 id="titulo-principal" class="entrada">Instalações elétricas<br><em>seguras e inteligentes.</em></h1>
+          <p class="hero-descricao entrada">Instalações, manutenção, iluminação e automação para sua casa ou empresa. Cuidado técnico e atenção ao acabamento em Curitiba e São José dos Pinhais.</p>
+          <div class="hero-acoes entrada"><a class="botao botao-laranja" href="#contato">Solicitar orçamento <svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></a><a class="botao botao-escuro" href="#projetos">Ver projetos <svg class="icone" aria-hidden="true"><use href="#seta"/></svg></a></div>
+          <ul class="hero-destaques entrada"><li><strong><span data-contagem="24" aria-hidden="true">24</span><span aria-hidden="true">h</span><span class="sr-only">24 horas</span></strong><span>Emergências</span></li><li><strong>Residencial</strong><span>Casas e apartamentos</span></li><li><strong>Comercial</strong><span>Lojas e escritórios</span></li></ul>
         </div>
-
-        <div class="hero__visual reveal" style="--d:2">
-          <div class="hero__image media">
-            <img src="img/foto_quem_somos.jpg"
-                 alt="Iluminação LED em sanca de gesso e ferramentas de trabalho"
-                 width="800" height="1000" fetchpriority="high">
-          </div>
-
-          <!-- Cards flutuantes removidos -->
+        <div class="hero-visual entrada">
+          <figure class="foto-moldura"><img class="foto-principal" src="assets/foto_quem_somos.jpg" alt="Iluminação LED em sanca de gesso, do portfólio da Valtek Elétrica" width="675" height="1200" fetchpriority="high"></figure>
+          <div class="foto-caption"><span>ILUMINAÇÃO RESIDENCIAL</span><span>Valtek Elétrica · Curitiba</span></div>
         </div>
       </div>
+      <a class="rolar" href="#sobre" aria-label="Conhecer a Valtek"><span></span></a>
+    </section>
+    <div class="faixa-marcas" aria-label="Marcas com que trabalhamos"><div class="faixa-trilho">
+      <ul><li>Schneider</li><li>WEG</li><li>Siemens</li><li>Legrand</li><li>Steck</li><li>Philips Hue</li><li>Tramontina</li><li>ABB</li></ul>
+      <ul aria-hidden="true"><li>Schneider</li><li>WEG</li><li>Siemens</li><li>Legrand</li><li>Steck</li><li>Philips Hue</li><li>Tramontina</li><li>ABB</li></ul>
+    </div></div>
 
-      <a href="#sobre" class="scroll-indicator" aria-label="Rolar para a próxima seção"><span></span></a>
+<section class="secao container sobre" id="sobre" aria-labelledby="titulo-sobre">
+      <figure class="sobre-imagem entrada"><img src="assets/trabalho-quadro-distribuicao.jpg" alt="Quadro de distribuição elétrica do portfólio da Valtek" width="2252" height="4000" loading="lazy"><figcaption><svg class="icone" aria-hidden="true"><use href="#escudo"/></svg> Cuidado em cada conexão.</figcaption></figure>
+      <div class="sobre-texto entrada"><p class="sobretitulo">SOBRE A VALTEK</p><h2 id="titulo-sobre">Precisão técnica.<br><em>Cuidado nos detalhes.</em></h2><p>A Valtek Elétrica atua com instalações residenciais e comerciais, manutenção, iluminação e automação. Nosso trabalho conecta cuidado técnico, funcionalidade e atenção ao acabamento.</p><p>Da conversa inicial à verificação final, cada etapa precisa fazer sentido para você e para o seu espaço.</p><ul class="lista-cuidado"><li><svg class="icone" aria-hidden="true"><use href="#check"/></svg> Clareza sobre serviços, materiais e valores</li><li><svg class="icone" aria-hidden="true"><use href="#check"/></svg> Cuidado com o ambiente durante o atendimento</li><li><svg class="icone" aria-hidden="true"><use href="#check"/></svg> Verificação e orientação ao concluir o serviço</li></ul><a class="botao botao-escuro" href="#servicos">Conheça nossos serviços <svg class="icone" aria-hidden="true"><use href="#seta"/></svg></a><p class="sobre-local">Curitiba e São José dos Pinhais, PR</p></div>
     </section>
 
-    <!-- ================= MARCAS ================= -->
-    <div class="brands" aria-label="Marcas com que trabalhamos">
-      <div class="brands__track">
-        <ul class="brands__list">
-          <li>Schneider</li><li>WEG</li><li>Siemens</li><li>Legrand</li><li>Steck</li><li>Philips Hue</li><li>Tramontina</li><li>ABB</li>
-        </ul>
-        <ul class="brands__list" aria-hidden="true">
-          <li>Schneider</li><li>WEG</li><li>Siemens</li><li>Legrand</li><li>Steck</li><li>Philips Hue</li><li>Tramontina</li><li>ABB</li>
-        </ul>
-      </div>
-    </div>
+<section class="secao servicos" id="servicos" aria-labelledby="titulo-servicos"><div class="container">
+      <div class="cabecalho-secao centralizado entrada"><p class="sobretitulo">NOSSOS SERVIÇOS</p><h2 id="titulo-servicos">Soluções completas<br>em <em>energia.</em></h2><p>Do projeto à manutenção, atenção a cada detalhe<br>para sua casa ou empresa.</p></div>
+      <div class="servicos-grade"><article class="servico entrada"><div class="servico-topo"><svg class="icone" aria-hidden="true"><use href="#casa"/></svg><span>01</span></div><h3>Residencial</h3><p>Instalações, reformas e adequações em casas e apartamentos.</p><ul class="servico-lista"><li>Quadros de distribuição</li><li>Tomadas e circuitos dedicados</li><li>Padrão de entrada</li></ul><a class="servico-link" href="#contato" data-servico="Instalações residenciais">Solicitar orçamento <svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></a></article>
+<article class="servico entrada"><div class="servico-topo"><svg class="icone" aria-hidden="true"><use href="#quadro"/></svg><span>02</span></div><h3>Comercial</h3><p>Infraestrutura elétrica para lojas e escritórios, com atenção ao funcionamento de cada espaço.</p><ul class="servico-lista"><li>Sistemas trifásicos</li><li>Cabeamento estruturado</li><li>Circuitos e distribuição</li></ul><a class="servico-link" href="#contato" data-servico="Instalações comerciais">Solicitar orçamento <svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></a></article>
+<article class="servico entrada"><div class="servico-topo"><svg class="icone" aria-hidden="true"><use href="#ferramenta"/></svg><span>03</span></div><h3>Manutenção</h3><p>Manutenção preventiva e corretiva para identificar problemas e cuidar da instalação.</p><ul class="servico-lista"><li>Diagnóstico de falhas</li><li>Curtos e quedas de energia</li><li>Revisão de disjuntores</li></ul><a class="servico-link" href="#contato" data-servico="Manutenção elétrica">Solicitar orçamento <svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></a></article>
+<article class="servico entrada"><div class="servico-topo"><svg class="icone" aria-hidden="true"><use href="#lampada"/></svg><span>04</span></div><h3>Iluminação e LED</h3><p>Luz que valoriza a arquitetura e traz conforto ao ambiente.</p><ul class="servico-lista"><li>LED em sancas</li><li>Perfis de iluminação</li><li>Luminárias e pendentes</li></ul><a class="servico-link" href="#contato" data-servico="Iluminação e LED">Solicitar orçamento <svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></a></article>
+<article class="servico entrada"><div class="servico-topo"><svg class="icone" aria-hidden="true"><use href="#automacao"/></svg><span>05</span></div><h3>Automação residencial</h3><p>Iluminação, cortinas e cenas pelo celular ou por comando de voz.</p><ul class="servico-lista"><li>Interruptores inteligentes</li><li>Integração Alexa / Google</li><li>Cenas para sua rotina</li></ul><a class="servico-link" href="#contato" data-servico="Automação residencial">Solicitar orçamento <svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></a></article>
+<article class="servico entrada servico-destaque"><div class="servico-topo"><svg class="icone" aria-hidden="true"><use href="#relogio"/></svg><span>24H</span></div><h3>Emergência 24h</h3><p>Fale com a Valtek para informar o problema e combinar o atendimento emergencial.</p><ul class="servico-lista"><li>Curitiba e região</li><li>Avaliação da necessidade</li><li>Contato pelo WhatsApp</li></ul><a class="servico-link" href="https://wa.me/5541988219664" data-whatsapp="Olá, Valtek! Preciso de atendimento emergencial." target="_blank" rel="noopener noreferrer">Chamar no WhatsApp <svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></a></article>
+      </div></div></section>
 
-    <!-- ================= SOBRE ================= -->
-    <section class="section about" id="sobre">
-      <div class="container about__inner">
-        <div class="about__media reveal">
-          <div class="about__image media">
-            <img src="img/trabalho-quadro-distribuicao.jpg"
-                 alt="Eletricista profissional realizando instalação em quadro de distribuição"
-                 width="800" height="1000" loading="lazy">
-          </div>
-          <div class="about__badge glass">
-            <strong class="text-gradient">15+</strong>
-            <span>anos acendendo<br>a confiança</span>
-          </div>
-        </div>
+<section class="processo" id="como-funciona" aria-labelledby="titulo-processo"><div class="container"><div class="cabecalho-secao entrada"><div><p class="sobretitulo">DO PRIMEIRO CONTATO À ENTREGA</p><h2 id="titulo-processo">Um processo claro.<br><em>Em cada etapa.</em></h2></div><a class="link-simples" href="#contato">Comece por aqui <svg class="icone"><use href="#diagonal"/></svg></a></div><ol class="passos"><li class="entrada"><span class="numero-passo">01</span><h3>Você conta o que precisa</h3><p>Descreva o problema ou a ideia para seu espaço. Fotos também podem ajudar na conversa.</p></li><li class="entrada"><span class="numero-passo">02</span><h3>Alinhamos cada detalhe</h3><p>Avaliamos a necessidade, combinamos a visita e apresentamos o escopo e o orçamento.</p></li><li class="entrada"><span class="numero-passo">03</span><h3>A gente cuida da execução</h3><p>Com tudo aprovado, é hora de executar, conferir o funcionamento e orientar você.</p></li></ol></div></section>
 
-        <div class="about__content">
-          <span class="eyebrow reveal">Sobre nós</span>
-          <h2 class="section__title reveal" style="--d:1">Precisão técnica com <span class="text-gradient">padrão de excelência</span></h2>
-          <p class="section__desc reveal" style="--d:2">
-            A Valtek Elétrica nasceu para elevar o padrão dos serviços elétricos. Unimos rigor normativo,
-            tecnologia de ponta e acabamento impecável para entregar instalações que são, ao mesmo tempo,
-            seguras, eficientes e bonitas.
-          </p>
+<section class="secao container projetos" id="projetos" aria-labelledby="titulo-projetos"><div class="cabecalho-secao centralizado entrada"><p class="sobretitulo">PORTFÓLIO</p><h2 id="titulo-projetos">Projetos que<br><em>iluminam.</em></h2><p>Uma seleção de trabalhos da Valtek.<br>Elétrica, iluminação e infraestrutura.</p></div><div class="projetos-grade"><figure class="projeto entrada projeto-grande"><a href="assets/trabalho-iluminacao-led.jpg" data-galeria target="_blank" rel="noopener noreferrer" aria-label="Ampliar foto: Luz integrada à arquitetura"><img src="assets/trabalho-iluminacao-led.jpg" alt="Perfis de LED instalados no teto de um ambiente comercial" width="2252" height="4000" loading="lazy"><span class="ampliar" aria-hidden="true"><svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></span></a><figcaption><span>Iluminação</span><h3>Luz integrada à arquitetura</h3></figcaption></figure>
+<figure class="projeto entrada projeto-alto"><a href="assets/trabalho-iluminacao-escada.jpg" data-galeria target="_blank" rel="noopener noreferrer" aria-label="Ampliar foto: Luz para cada percurso"><img src="assets/trabalho-iluminacao-escada.jpg" alt="Perfil de LED no teto e iluminação junto à escada" width="2252" height="4000" loading="lazy"><span class="ampliar" aria-hidden="true"><svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></span></a><figcaption><span>Iluminação</span><h3>Luz para cada percurso</h3></figcaption></figure>
+<figure class="projeto entrada "><a href="assets/trabalho-iluminacao-moderna.jpg" data-galeria target="_blank" rel="noopener noreferrer" aria-label="Ampliar foto: Distribuição de energia"><img src="assets/trabalho-iluminacao-moderna.jpg" alt="Painel elétrico com disjuntor geral, barramentos e cabos" width="1200" height="675" loading="lazy"><span class="ampliar" aria-hidden="true"><svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></span></a><figcaption><span>Instalações</span><h3>Distribuição de energia</h3></figcaption></figure>
+<figure class="projeto entrada "><a href="assets/trabalho-quadro-distribuicao.jpg" data-galeria target="_blank" rel="noopener noreferrer" aria-label="Ampliar foto: Quadros e proteção"><img src="assets/trabalho-quadro-distribuicao.jpg" alt="Quadro de distribuição com disjuntores e proteção elétrica" width="2252" height="4000" loading="lazy"><span class="ampliar" aria-hidden="true"><svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></span></a><figcaption><span>Instalações</span><h3>Quadros e proteção</h3></figcaption></figure>
+<figure class="projeto entrada projeto-largo"><a href="assets/trabalho-rack-rede.jpg" data-galeria target="_blank" rel="noopener noreferrer" aria-label="Ampliar foto: Conexões para seu negócio"><img src="assets/trabalho-rack-rede.jpg" alt="Rack com switches e cabeamento de rede organizado" width="2252" height="4000" loading="lazy"><span class="ampliar" aria-hidden="true"><svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></span></a><figcaption><span>Infraestrutura</span><h3>Conexões para seu negócio</h3></figcaption></figure>
+<figure class="projeto entrada projeto-largo"><a href="assets/trabalho-iluminacao-corredor.jpg" data-galeria target="_blank" rel="noopener noreferrer" aria-label="Ampliar foto: Detalhes que fazem diferença"><img src="assets/trabalho-iluminacao-corredor.jpg" alt="Perfis de LED no teto de corredor junto à escada" width="2252" height="4000" loading="lazy"><span class="ampliar" aria-hidden="true"><svg class="icone" aria-hidden="true"><use href="#diagonal"/></svg></span></a><figcaption><span>Iluminação</span><h3>Detalhes que fazem diferença</h3></figcaption></figure></div></section>
 
-          <ul class="about__features">
-            <li class="reveal" style="--d:2"><span class="check"><svg class="icon"><use href="#i-check"/></svg></span>Equipe certificada NR-10 e NR-35</li>
-            <li class="reveal" style="--d:3"><span class="check"><svg class="icon"><use href="#i-check"/></svg></span>Responsável técnico com registro no CREA</li>
-            <li class="reveal" style="--d:4"><span class="check"><svg class="icon"><use href="#i-check"/></svg></span>Materiais certificados pelo INMETRO</li>
-            <li class="reveal" style="--d:5"><span class="check"><svg class="icon"><use href="#i-check"/></svg></span>Garantia de serviço por escrito</li>
-          </ul>
+<section class="container emergencia entrada" aria-labelledby="titulo-emergencia"><div class="emergencia-texto"><span class="emergencia-icone"><svg class="icone" aria-hidden="true"><use href="#relogio"/></svg></span><div><p class="sobretitulo">ATENDIMENTO 24H</p><h2 id="titulo-emergencia">Precisou de ajuda?<br><em>Fale com a Valtek.</em></h2><p>Conte o que aconteceu e combine o atendimento<br>em Curitiba e São José dos Pinhais.</p></div></div><div class="emergencia-acoes"><a class="botao botao-laranja" href="https://wa.me/5541988219664" data-whatsapp="Olá, Valtek! Preciso de um atendimento emergencial." target="_blank" rel="noopener noreferrer"><svg class="icone" aria-hidden="true"><use href="#whatsapp"/></svg> WhatsApp</a><a class="botao botao-escuro" href="tel:+5541988219664"><svg class="icone" aria-hidden="true"><use href="#telefone"/></svg> Ligar agora</a></div></section>
 
-          <div class="about__actions reveal" style="--d:5">
-            <a href="#servicos" class="btn btn--ghost">Conheça nossos serviços <svg class="icon"><use href="#i-arrow"/></svg></a>
-          </div>
-        </div>
-      </div>
-    </section>
+<section class="duvidas secao" id="duvidas" aria-labelledby="titulo-duvidas"><div class="container duvidas-grade entrada"><div><p class="sobretitulo">PERGUNTAS FREQUENTES</p><h2 id="titulo-duvidas">Ficou alguma<br>dúvida?</h2><p>A conversa pode começar por aqui.</p><a class="link-simples" href="#contato">Tenho outra pergunta <svg class="icone"><use href="#seta"/></svg></a></div><div class="acordeao"><details><summary>Como funciona o orçamento?<span aria-hidden="true">+</span></summary><p>O primeiro passo é entender o serviço. Dependendo da situação, pode ser necessária uma visita para avaliar o local. Valores de visita, materiais e execução são combinados antes da aprovação.</p></details><details><summary>Vocês atendem residências e empresas?<span aria-hidden="true">+</span></summary><p>Sim. A Valtek atende casas, apartamentos, comércios e escritórios em Curitiba e São José dos Pinhais. Entre em contato para confirmar a disponibilidade para o seu endereço.</p></details><details><summary>Preciso comprar os materiais antes?<span aria-hidden="true">+</span></summary><p>O ideal é alinhar os materiais depois da avaliação. Assim, a lista de itens e a responsabilidade pela compra ficam definidas no orçamento, evitando compras desnecessárias.</p></details><details><summary>Posso solicitar uma avaliação sem saber o problema?<span aria-hidden="true">+</span></summary><p>Sim. Basta descrever o que você percebeu, como um ponto sem energia ou um disjuntor que desarma. Não é necessário identificar a causa para iniciar a conversa.</p></details></div></div></section>
 
-    <!-- ================= SERVIÇOS ================= -->
-    <section class="section section--alt services" id="servicos">
-      <div class="container">
-        <header class="section__head">
-          <span class="eyebrow reveal">Nossos serviços</span>
-          <h2 class="section__title reveal" style="--d:1">Soluções completas em <span class="text-gradient">energia</span></h2>
-          <p class="section__desc reveal" style="--d:2">Do projeto à manutenção, cuidamos de cada detalhe para que a energia flua com segurança e inteligência.</p>
-        </header>
-
-        <div class="services__grid">
-          <article class="service-card reveal" data-spotlight style="--d:1">
-            <div class="service-card__icon"><svg class="icon"><use href="#i-home"/></svg></div>
-            <h3 class="service-card__title">Residencial</h3>
-            <p class="service-card__text">Instalações completas, reformas e adequações para casas e apartamentos, com acabamento de alto padrão.</p>
-            <ul class="service-card__list">
-              <li>Quadros de distribuição</li><li>Tomadas e circuitos dedicados</li><li>Padrão de entrada</li>
-            </ul>
-            <a href="#contato" class="service-card__link">Solicitar <svg class="icon"><use href="#i-arrow"/></svg></a>
-          </article>
-
-          <article class="service-card reveal" data-spotlight style="--d:2">
-            <div class="service-card__icon"><svg class="icon"><use href="#i-building"/></svg></div>
-            <h3 class="service-card__title">Comercial</h3>
-            <p class="service-card__text">Infraestrutura elétrica robusta para lojas, escritórios e indústrias leves, dimensionada para crescer.</p>
-            <ul class="service-card__list">
-              <li>Sistemas trifásicos</li><li>Cabeamento estruturado</li><li>Laudos técnicos</li>
-            </ul>
-            <a href="#contato" class="service-card__link">Solicitar <svg class="icon"><use href="#i-arrow"/></svg></a>
-          </article>
-
-          <article class="service-card reveal" data-spotlight style="--d:3">
-            <div class="service-card__icon"><svg class="icon"><use href="#i-wrench"/></svg></div>
-            <h3 class="service-card__title">Manutenção</h3>
-            <p class="service-card__text">Manutenção preventiva e corretiva com diagnóstico preciso, evitando falhas e desperdício de energia.</p>
-            <ul class="service-card__list">
-              <li>Termografia</li><li>Correção de curtos e quedas</li><li>Revisão de disjuntores</li>
-            </ul>
-            <a href="#contato" class="service-card__link">Solicitar <svg class="icon"><use href="#i-arrow"/></svg></a>
-          </article>
-
-          <article class="service-card reveal" data-spotlight style="--d:1">
-            <div class="service-card__icon"><svg class="icon"><use href="#i-bulb"/></svg></div>
-            <h3 class="service-card__title">Projetos Luminotécnicos</h3>
-            <p class="service-card__text">Iluminação planejada que valoriza a arquitetura: sancas, perfis de LED, cenários e conforto visual.</p>
-            <ul class="service-card__list">
-              <li>LED em gesso e sancas</li><li>Perfis de alumínio</li><li>Cálculo luminotécnico</li>
-            </ul>
-            <a href="#contato" class="service-card__link">Solicitar <svg class="icon"><use href="#i-arrow"/></svg></a>
-          </article>
-
-          <article class="service-card reveal" data-spotlight style="--d:2">
-            <div class="service-card__icon"><svg class="icon"><use href="#i-chip"/></svg></div>
-            <h3 class="service-card__title">Automação Residencial</h3>
-            <p class="service-card__text">Casa inteligente: controle de iluminação, cortinas e cenas pelo celular ou por comando de voz.</p>
-            <ul class="service-card__list">
-              <li>Interruptores smart</li><li>Integração Alexa / Google</li><li>Sensores de presença</li>
-            </ul>
-            <a href="#contato" class="service-card__link">Solicitar <svg class="icon"><use href="#i-arrow"/></svg></a>
-          </article>
-
-          <article class="service-card service-card--accent reveal" data-spotlight style="--d:3">
-            <div class="service-card__icon"><svg class="icon"><use href="#i-siren"/></svg></div>
-            <h3 class="service-card__title">Emergência 24h</h3>
-            <p class="service-card__text">Ficou sem energia ou sentiu cheiro de queimado? Nossa equipe de plantão chega rápido até você.</p>
-            <ul class="service-card__list">
-              <li>Atendimento imediato</li><li>Diagnóstico no local</li><li>Todos os dias do ano</li>
-            </ul>
-            <a href="https://wa.me/5541988219664" target="_blank" rel="noopener" class="service-card__link">Chamar agora <svg class="icon"><use href="#i-arrow"/></svg></a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= PROJETOS / PORTFÓLIO ================= -->
-    <section class="section projects" id="projetos">
-      <div class="container">
-        <header class="section__head">
-          <span class="eyebrow reveal">Portfólio</span>
-          <h2 class="section__title reveal" style="--d:1">Projetos que <span class="text-gradient">iluminam</span></h2>
-          <p class="section__desc reveal" style="--d:2">Uma seleção de trabalhos onde técnica e estética caminham juntas.</p>
-        </header>
-
-        <div class="gallery">
-          <figure class="gallery__item gallery__item--big media reveal">
-            <img src="img/trabalho-iluminacao-led.jpg"
-                 alt="Iluminação LED" loading="lazy" width="1200" height="900">
-            <figcaption class="gallery__caption">
-              <span class="tag">Luminotécnico</span>
-              <h3>Iluminação LED</h3>
-            </figcaption>
-            <button class="gallery__zoom" aria-label="Ampliar imagem: Iluminação LED"><svg class="icon"><use href="#i-expand"/></svg></button>
-          </figure>
-
-          <figure class="gallery__item gallery__item--tall media reveal" style="--d:1">
-            <img src="img/trabalho-iluminacao-escada.jpg"
-                 alt="Automação Residencial" loading="lazy" width="800" height="1100">
-            <figcaption class="gallery__caption">
-              <span class="tag">Automação</span>
-              <h3>Automação Residencial</h3>
-            </figcaption>
-            <button class="gallery__zoom" aria-label="Ampliar imagem: Automação Residencial"><svg class="icon"><use href="#i-expand"/></svg></button>
-          </figure>
-
-          <figure class="gallery__item media reveal" style="--d:2">
-            <img src="img/trabalho-iluminacao-moderna.jpg"
-                 alt="Iluminação Moderna" loading="lazy" width="800" height="600">
-            <figcaption class="gallery__caption">
-              <span class="tag">Design</span>
-              <h3>Iluminação Moderna</h3>
-            </figcaption>
-            <button class="gallery__zoom" aria-label="Ampliar imagem: Iluminação Moderna"><svg class="icon"><use href="#i-expand"/></svg></button>
-          </figure>
-
-          <figure class="gallery__item media reveal" style="--d:3">
-            <img src="img/primeira_imagem_original.jpg"
-                 alt="Quadro Elétrico" loading="lazy" width="800" height="600">
-            <figcaption class="gallery__caption">
-              <span class="tag">Residencial</span>
-              <h3>Quadro Elétrico</h3>
-            </figcaption>
-            <button class="gallery__zoom" aria-label="Ampliar imagem: Quadro Elétrico"><svg class="icon"><use href="#i-expand"/></svg></button>
-          </figure>
-
-          <figure class="gallery__item gallery__item--wide media reveal" style="--d:1">
-            <img src="img/trabalho-rack-rede.jpg"
-                 alt="Infraestrutura de Rede" loading="lazy" width="1200" height="600">
-            <figcaption class="gallery__caption">
-              <span class="tag">Comercial</span>
-              <h3>Infraestrutura de Rede</h3>
-            </figcaption>
-            <button class="gallery__zoom" aria-label="Ampliar imagem: Infraestrutura de Rede"><svg class="icon"><use href="#i-expand"/></svg></button>
-          </figure>
-
-          <figure class="gallery__item media reveal" style="--d:2">
-            <img src="img/trabalho-eletrica-geral.jpg"
-                 alt="Elétrica Geral" loading="lazy" width="800" height="600">
-            <figcaption class="gallery__caption">
-              <span class="tag">Residencial</span>
-              <h3>Elétrica Geral</h3>
-            </figcaption>
-            <button class="gallery__zoom" aria-label="Ampliar imagem: Elétrica Geral"><svg class="icon"><use href="#i-expand"/></svg></button>
-          </figure>
-
-          <figure class="gallery__item media reveal" style="--d:3">
-            <img src="img/trabalho-iluminacao-corredor.jpg"
-                 alt="Manutenção" loading="lazy" width="800" height="600">
-            <figcaption class="gallery__caption">
-              <span class="tag">Manutenção</span>
-              <h3>Manutenção</h3>
-            </figcaption>
-            <button class="gallery__zoom" aria-label="Ampliar imagem: Manutenção"><svg class="icon"><use href="#i-expand"/></svg></button>
-          </figure>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CTA BAND ================= -->
-    <section class="cta-band">
-      <div class="container">
-        <div class="cta-band__card reveal">
-          <div class="cta-band__glow" aria-hidden="true"></div>
-          <div class="cta-band__content">
-            <span class="cta-band__icon"><svg class="icon icon--fill"><use href="#i-bolt"/></svg></span>
-            <div>
-              <h2>Emergência elétrica? <span class="text-gradient">Chegamos rápido.</span></h2>
-              <p>Plantão 24 horas, 7 dias por semana, com técnicos prontos para restabelecer sua energia com segurança.</p>
-            </div>
-          </div>
-          <div class="cta-band__actions">
-            <a href="https://wa.me/5541988219664?text=Ol%C3%A1!%20Preciso%20de%20um%20atendimento%20emergencial." target="_blank" rel="noopener" class="btn btn--whatsapp btn--lg">
-              <svg class="icon"><use href="#i-whatsapp"/></svg> WhatsApp
-            </a>
-            <a href="tel:+5541988219664" class="btn btn--ghost btn--lg">
-              <svg class="icon"><use href="#i-phone"/></svg> Ligar agora
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- ================= CONTATO ================= -->
-    <section class="section contact" id="contato">
-      <div class="container contact__inner">
-        <div class="contact__info">
-          <span class="eyebrow reveal">Contato</span>
-          <h2 class="section__title reveal" style="--d:1">Vamos energizar o seu <span class="text-gradient">próximo projeto</span></h2>
-          <p class="section__desc reveal" style="--d:2">Orçamento gratuito e sem compromisso. Responda pelo canal que preferir — retornamos em minutos.</p>
-
-          <a href="https://wa.me/5541988219664?text=Ol%C3%A1!%20Gostaria%20de%20solicitar%20um%20or%C3%A7amento." target="_blank" rel="noopener" class="contact-card contact-card--whatsapp reveal" style="--d:2">
-            <span class="contact-card__icon"><svg class="icon"><use href="#i-whatsapp"/></svg></span>
-            <span class="contact-card__body">
-              <small>WhatsApp · resposta em até 5 min</small>
-              <strong>(41) 98821-9664</strong>
-            </span>
-            <svg class="icon contact-card__arrow"><use href="#i-arrow"/></svg>
-          </a>
-
-          <div class="contact__list">
-            <a href="tel:+5541988219664" class="contact-card reveal" style="--d:3">
-              <span class="contact-card__icon"><svg class="icon"><use href="#i-phone"/></svg></span>
-              <span class="contact-card__body"><small>Telefone</small><strong>(41) 98821-9664</strong></span>
-            </a>
-            <a href="https://valmirfrigotto.github.io/Valmir-eletricista" target="_blank" rel="noopener" class="contact-card reveal" style="--d:4">
-              <span class="contact-card__icon"><svg class="icon"><use href="#i-home"/></svg></span>
-              <span class="contact-card__body"><small>Site</small><strong>valmirfrigotto.github.io/Valmir-eletricista</strong></span>
-            </a>
-            <div class="contact-card reveal" style="--d:5">
-              <span class="contact-card__icon"><svg class="icon"><use href="#i-clock"/></svg></span>
-              <span class="contact-card__body"><small>Horário comercial</small><strong>Atendimento 24h</strong></span>
-            </div>
-          </div>
-        </div>
-
-        <form class="form glass reveal" id="contactForm" novalidate style="--d:2">
-          <div class="form__head">
-            <h3>Solicitar orçamento</h3>
-            <p>Preencha os dados e entraremos em contato.</p>
-          </div>
-
-          <div class="form__grid">
-            <div class="field">
-              <input class="field__input" type="text" id="nome" name="nome" placeholder=" " autocomplete="name" aria-describedby="err-nome" required>
-              <label class="field__label" for="nome">Nome completo</label>
-              <span class="field__error" id="err-nome" aria-live="polite"></span>
-            </div>
-
-            <div class="field">
-              <input class="field__input" type="tel" id="telefone" name="telefone" placeholder=" " autocomplete="tel" inputmode="numeric" aria-describedby="err-telefone" required>
-              <label class="field__label" for="telefone">WhatsApp / Telefone</label>
-              <span class="field__error" id="err-telefone" aria-live="polite"></span>
-            </div>
-
-
-
-            <div class="field">
-              <select class="field__input field__select" id="servico" name="servico" aria-describedby="err-servico" required>
-                <option value="" disabled selected hidden></option>
-                <option>Residencial</option>
-                <option>Comercial</option>
-                <option>Manutenção</option>
-                <option>Projeto Luminotécnico</option>
-                <option>Automação</option>
-                <option>Emergência</option>
-              </select>
-              <label class="field__label" for="servico">Tipo de serviço</label>
-              <span class="field__error" id="err-servico" aria-live="polite"></span>
-            </div>
-
-            <div class="field field--full">
-              <textarea class="field__input field__textarea" id="mensagem" name="mensagem" placeholder=" " rows="4"></textarea>
-              <label class="field__label" for="mensagem">Conte um pouco sobre o projeto (opcional)</label>
-            </div>
-          </div>
-
-          <button type="submit" class="btn btn--primary btn--lg btn--block">
-            <span class="btn__text">Enviar solicitação</span>
-            <svg class="icon btn__icon"><use href="#i-arrow"/></svg>
-            <span class="btn__spinner" aria-hidden="true"></span>
-          </button>
-
-          <p class="form__note"><svg class="icon"><use href="#i-shield"/></svg> Seus dados estão seguros e não serão compartilhados.</p>
-        </form>
-      </div>
-    </section>
+<section class="secao container contato" id="contato" aria-labelledby="titulo-contato"><div class="contato-texto entrada"><p class="sobretitulo">SEU PRÓXIMO PROJETO</p><h2 id="titulo-contato">Vamos cuidar<br>do seu <em>espaço.</em></h2><p>Fale com a Valtek Elétrica pelo WhatsApp ou telefone.<br>Atendimento em Curitiba e São José dos Pinhais.</p><div class="contatos-reais"><a class="contato-direto" href="https://wa.me/5541988219664" data-whatsapp="Olá, Valtek! Gostaria de solicitar um orçamento." target="_blank" rel="noopener noreferrer"><span class="contato-direto-icone"><svg class="icone"><use href="#whatsapp"/></svg></span><span><small>WhatsApp da Valtek</small><strong>(41) 98821-9664</strong></span><svg class="icone"><use href="#diagonal"/></svg></a><div class="contato-canais"><a href="tel:+5541988219664"><svg class="icone"><use href="#telefone"/></svg> Ligar para a Valtek</a><span><svg class="icone"><use href="#relogio"/></svg> Emergências 24h</span></div></div><p class="aviso-demo">Você confere a mensagem antes de abrir o WhatsApp. O envio é confirmado por você no aplicativo.</p></div><form id="formulario" class="formulario entrada"><h3>Conte sobre seu projeto</h3><div class="campos-linha"><div class="campo"><label for="nome">Seu nome <span>*</span></label><input id="nome" name="nome" autocomplete="given-name" placeholder="Como podemos chamar você?" required maxlength="80"></div><div class="campo"><label for="local">Cidade ou bairro <span>*</span></label><input id="local" name="local" autocomplete="address-level2" placeholder="Onde será o serviço?" required maxlength="120"></div></div><div class="campo"><label for="servico">O que você precisa? <span>*</span></label><select id="servico" name="servico" required><option value="">Selecione um serviço</option><option>Instalações residenciais</option><option>Iluminação e LED</option><option>Manutenção elétrica</option><option>Instalações comerciais</option><option>Automação residencial</option><option>Emergência elétrica</option><option>Preciso de uma avaliação</option></select></div><div class="campo"><label for="descricao">Conte um pouco mais <span class="opcional">(opcional)</span></label><textarea id="descricao" name="descricao" rows="3" maxlength="1500" placeholder="Ex.: quero instalar dois pendentes na sala."></textarea></div><button class="botao botao-laranja botao-largo" type="submit" disabled>Preparar orçamento <svg class="icone"><use href="#diagonal"/></svg></button><p class="formulario-legenda">Você revisa a mensagem antes de seguir para o WhatsApp.</p><noscript><p>Ative o JavaScript para montar uma solicitação. Você também pode usar o botão do WhatsApp para entrar em contato diretamente.</p></noscript></form></section>
   </main>
 
-  <!-- ================= FOOTER ================= -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <a href="#inicio" class="logo">
-            <img src="img/logo_valtek.png" alt="Valtek Elétrica" style="max-height: 42px; width: auto; display: block; filter: drop-shadow(0 0 10px rgba(251,191,36,0.3));">
-          </a>
-          <p>Instalações elétricas seguras, inteligentes e com acabamento de alto padrão. Energia com responsabilidade.</p>
-          <ul class="socials">
-            <li><a href="#" aria-label="Instagram"><svg class="icon"><use href="#i-instagram"/></svg></a></li>
-            <li><a href="#" aria-label="Facebook"><svg class="icon"><use href="#i-facebook"/></svg></a></li>
-          </ul>
-        </div>
+  <footer class="rodape"><div class="container rodape-topo">
+      <div class="rodape-marca"><a class="marca marca-valtek" href="#inicio" aria-label="Valtek Elétrica, voltar ao início"><span class="marca-recorte"><img src="assets/logo-valtek-translucida.png" alt="Valtek Elétrica" width="1655" height="950"></span></a><p>Elétrica, iluminação e automação.<br>Precisão técnica e cuidado com o seu espaço.</p></div>
+      <nav class="rodape-coluna" aria-label="Navegação do rodapé"><h3>Navegação</h3><a href="#sobre">A Valtek</a><a href="#servicos">Serviços</a><a href="#projetos">Projetos</a><a href="#contato">Contato</a></nav>
+      <nav class="rodape-coluna" aria-label="Serviços no rodapé"><h3>Serviços</h3><a href="#contato" data-servico="Instalações residenciais">Residencial</a><a href="#contato" data-servico="Instalações comerciais">Comercial</a><a href="#contato" data-servico="Iluminação e LED">Iluminação</a><a href="#contato" data-servico="Automação residencial">Automação</a></nav>
+      <div class="rodape-coluna"><h3>Fale com a Valtek</h3><a href="tel:+5541988219664">(41) 98821-9664</a><span>Curitiba e São José dos Pinhais</span><span>Atendimento emergencial 24h</span><a href="#inicio" class="link-simples">Voltar ao topo <svg class="icone" aria-hidden="true"><use href="#seta"/></svg></a></div>
+    </div><div class="container rodape-base"><span>© <span id="ano">2026</span> Valtek Elétrica.</span><span>Instalações, manutenção e automação · PR</span></div></footer>
 
-        <div class="footer__col">
-          <h4>Navegação</h4>
-          <ul>
-            <li><a href="#sobre">Sobre</a></li>
-            <li><a href="#servicos">Serviços</a></li>
-            <li><a href="#projetos">Projetos</a></li>
-            <li><a href="#contato">Contatos</a></li>
-          </ul>
-        </div>
+  <a id="whatsapp-flutuante" class="whatsapp-flutuante" href="https://wa.me/5541988219664?text=Ol%C3%A1%2C%20Valtek%21%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." data-whatsapp="Olá, Valtek! Vim pelo site e gostaria de um orçamento." target="_blank" rel="noopener noreferrer" aria-label="Falar com a Valtek Elétrica pelo WhatsApp, abre em nova aba"><svg class="icone" aria-hidden="true"><use href="#whatsapp"/></svg><span>Fale com a Valtek<small>WhatsApp</small></span></a>
 
-        <div class="footer__col">
-          <h4>Serviços</h4>
-          <ul>
-            <li><a href="#servicos">Residencial</a></li>
-            <li><a href="#servicos">Comercial</a></li>
-            <li><a href="#servicos">Manutenção</a></li>
-            <li><a href="#servicos">Luminotécnico</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__col">
-          <h4>Contato</h4>
-          <ul class="footer__contact">
-            <li><svg class="icon"><use href="#i-whatsapp"/></svg><a href="https://wa.me/5541988219664" target="_blank" rel="noopener">(41) 98821-9664</a></li>
-            <li><svg class="icon"><use href="#i-phone"/></svg><a href="tel:+5541988219664">(41) 98821-9664</a></li>
-            <li><svg class="icon"><use href="#i-home"/></svg><a href="https://valmirfrigotto.github.io/Valmir-eletricista" target="_blank" rel="noopener">Acessar GitHub Pages</a></li>
-            <li><svg class="icon"><use href="#i-pin"/></svg><span>Curitiba e SJP · PR</span></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer__watermark" aria-hidden="true">VALTEK</div>
-
-      <div class="footer__bottom">
-        <p>© <span id="year">2025</span> Valtek Elétrica. Todos os direitos reservados.</p>
-        <p>CNPJ 00.000.000/0001-00</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Botão flutuante WhatsApp -->
-  <a href="https://wa.me/5541988219664?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20um%20or%C3%A7amento." class="wa-float" target="_blank" rel="noopener" aria-label="Fale conosco pelo WhatsApp">
-    <svg class="icon"><use href="#i-whatsapp"/></svg>
-    <span class="wa-float__tip">Fale conosco</span>
-  </a>
-
-  <!-- Lightbox -->
-  <dialog class="lightbox" id="lightbox" aria-label="Visualização ampliada da imagem">
-    <div class="lightbox__inner">
-      <button class="lightbox__close" id="lightboxClose" aria-label="Fechar"><svg class="icon"><use href="#i-close"/></svg></button>
-      <img id="lightboxImg" alt="">
-      <p class="lightbox__caption" id="lightboxCaption"></p>
-    </div>
-  </dialog>
-
-  <!-- Toast -->
-  <div class="toast" id="toast" role="status" aria-live="polite">
-    <span class="toast__icon"><svg class="icon"><use href="#i-check"/></svg></span>
-    <p id="toastMsg"></p>
-  </div>
-
+  <dialog id="solicitacao" aria-labelledby="titulo-solicitacao"><button type="button" id="fechar-dialogo" class="fechar-dialogo" aria-label="Fechar solicitação">×</button><span class="dialogo-icone"><svg class="icone"><use href="#check"/></svg></span><p class="sobretitulo">PRÓXIMO PASSO</p><h2 id="titulo-solicitacao">Sua mensagem<br>está pronta.</h2><p id="explicacao-mensagem">Confira a mensagem e abra o WhatsApp para falar com a Valtek. O envio é confirmado por você no aplicativo.</p><label class="sr-only" for="mensagem-pronta">Texto da solicitação</label><textarea id="mensagem-pronta" rows="7" readonly></textarea><div class="dialogo-acoes"><button type="button" id="copiar" class="botao botao-escuro">Copiar mensagem <svg class="icone"><use href="#seta"/></svg></button><a id="enviar-whatsapp" class="botao botao-laranja" hidden target="_blank" rel="noopener noreferrer">Abrir WhatsApp <svg class="icone"><use href="#diagonal"/></svg></a></div><p id="status-copia" class="status-copia" role="status" aria-live="polite"></p></dialog>
+  <dialog id="galeria-dialogo" class="galeria-dialogo" aria-labelledby="galeria-titulo"><button id="fechar-galeria" class="fechar-dialogo" type="button" aria-label="Fechar imagem ampliada">×</button><img id="galeria-imagem" alt=""><h2 id="galeria-titulo"></h2></dialog>
 </body>
 </html>
